@@ -1,2 +1,2 @@
-# Bootcamp Launchbase
-Exercícios propostos do curso Bootcamp Launchbase da Rocketseat
+# Bootcamp LaunchBase
+Exercícios propostos e feitos do curso Bootcamp Launchbase da Rocketseat
