@@ -16,6 +16,11 @@ nunjucks.configure("views", {
 
 server.get("/", function(req, res){
     return res.render("courses", { items: courses });
+
+    
+    server.use(function(req, res) {
+        res.status(404).render("not-found");
+    });
 }); //pega a barra e executa a função
 
 server.get("/about", function(req, res){
@@ -36,11 +41,31 @@ server.get("/about", function(req, res){
         ]
     }
     return res.render("about", { about });
+
+    
+        server.use(function(req, res) {
+            res.status(404).render("not-found");
+        });
 }); //pega a barra e executa a função
 
-server.use(function(req, res) {
-    res.status(404).render("not-found");
-});
+
+server.get("/courses/:id", function(req, res) {
+
+    const id = req.params.id;
+
+    //return res.send(`O id fornecido na rota é: ${id}`);
+
+    const course = courses.find(function(course){
+        return course.id == id;
+    });
+
+    if(!course){
+        return res.send("Course not found!");
+    }
+
+    return res.render("course", { item: course });
+  });
+  
 
 server.listen(5000, function() {
     console.log("server is running");

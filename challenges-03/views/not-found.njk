@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+{% extends "layout.njk" %}
+
       
-     {% block head %}
-        <title>Desafio 3-1</title>
-     {% endblock %}
-
-     <link rel="icon" href="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-02/master/desafios/favicon.ico" type="image/x-icon">
-    
-     <link rel="stylesheet" href="/styles.css">
-</head>
-
-<body>
-
-    <header>
-         <div class="links">
-            <a href="https://discordapp.com/invite/gCRAFhc" target="_blank">Comunidade</a>
-            <a href="mailto:oi@rocketseat.com.br" >Email</a>
-            <a href="tel:+5547992078767">Telefone</a>
-            <a href="/about">Sobre</a>
-            <a href="/">Cursos</a>
-        </div>
-
-        {% block content %}
-            <img class="error" src="https://www.flaticon.com/premium-icon/icons/svg/3040/3040624.svg" alt="">
-        {% endblock %}
-    </header>
+{% block head %}
+<title>Error 404</title>
+{% endblock %}
 
 
-    
-</body>
-
-</html>
+{% block content %}  
+    <img class="error" src="https://www.flaticon.com/premium-icon/icons/svg/3040/3040624.svg" alt="">
+{% endblock %}
